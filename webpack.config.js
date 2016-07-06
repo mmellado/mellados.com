@@ -1,16 +1,15 @@
+var webpack = require('webpack');
+
 if (process.env.NODE_ENV === 'development') {
-  var webpack = require('webpack');
-  var loaders = ['react-hot','babel'];
-  var plugins = [new webpack.EnvironmentPlugin(['NODE_ENV', 'SPACE', 'ACCESS_TOKEN'])];
+  var loaders = ['react-hot','babel']
 } else {
   var loaders = ['babel'];
-  var plugins = [];
 }
 
 module.exports = {
   devtool: 'eval',
   entry: './app-client.js',
-  plugins: plugins,
+  plugins: [new webpack.EnvironmentPlugin(['SPACE', 'ACCESS_TOKEN'])],
   output: {
     path: __dirname + '/public/dist',
     filename: 'bundle.js',
