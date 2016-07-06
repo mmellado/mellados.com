@@ -4,9 +4,17 @@ import { Link } from 'react-router'
 
 export default class Nav extends Component {
 
-  handleClick(){
-    $('.navbar-collapse').removeClass('in')
-    $('html, body').scrollTop(0)
+  _handleClick() {
+    $('html, body').scrollTop(0);
+  }
+
+  _handleMenuClick() {
+    $('html, body').scrollTop(0);
+    $('nav').toggleClass('open');
+  }
+
+  _toggleMenu() {
+    $('nav').toggleClass('open');
   }
 
   render(){
@@ -22,15 +30,18 @@ export default class Nav extends Component {
     const menu_items = nav_items.map(( nav_item ) => {
       return (
         <li key={ 'key-' + nav_item.value }>
-          <Link onClick={ this.handleClick } to={ '/' + nav_item.value }>{ nav_item.title }</Link>
+          <Link onClick={ this._handleMenuClick } to={ '/' + nav_item.value }>{ nav_item.title }</Link>
         </li>
       )
     })
 
     return (
       <nav>
+        <Link onClick={ this._handleClick } className="logo" to={'/'}>Marcos Mellado</Link>
         <div className="wrapper">
-          <Link onClick={ this.handleClick } to={'/'}>Marcos Mellado</Link>
+          <button className="menu-toggle" onClick={ this._toggleMenu }>
+            + menu
+          </button>
           <ul>
             { menu_items }
           </ul>

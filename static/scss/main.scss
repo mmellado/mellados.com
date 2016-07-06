@@ -1,6 +1,11 @@
 // Globals
-
-// Pages
+@import 'modules/reset';
+@import 'modules/colors';
+@import 'modules/base';
 
 // Modules
+@import 'modules/nav';
+@import 'modules/footer';
 @import 'modules/loader';
+
+// Pages
