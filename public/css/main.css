@@ -1,0 +1,44 @@
+.loader {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  margin: 25px; }
+  .loader .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; }
+    .loader .dot.one {
+      animation: smalldotopacity 1s infinite;
+      left: 0; }
+    .loader .dot.two {
+      animation: smalldotopacity 1s infinite;
+      animation-delay: 0.3s;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .loader .dot.three {
+      animation: smalldotopacity 1s infinite;
+      animation-delay: 0.6s;
+      right: 0; }
+
+@keyframes smalldotopacity {
+  0% {
+    opacity: 1; }
+  30% {
+    opacity: 0.5; }
+  60% {
+    opacity: 0; }
+  61% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }

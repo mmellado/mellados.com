@@ -1,0 +1,123 @@
+import config from '../config';
+import contentful from 'contentful';
+import _ from 'lodash';
+import { Router, browserHistory } from 'react-router'
+
+// AppStore
+import AppStore from '../stores/AppStore';
+
+let api_client = contentful.createClient({
+  space: process.env.SPACE,
+  accessToken: process.env.ACCESS_TOKEN
+});
+
+export function getStore(callback) {
+
+  api_client.getEntries()
+    .then(data => {
+      // Globals
+      let globals = AppStore.data.globals;
+
+      globals.nav_items = [{
+        title: 'About',
+        value: ''
+      },
+      {
+        title: 'Blog',
+        value: 'blog'
+      },
+      {
+        title: 'Projects',
+        value: 'projects'
+      },
+      {
+        title: 'Labs',
+        value: 'labs'
+      },
+      {
+        title: 'Contact',
+        value: 'contact'
+      }];
+
+      AppStore.data.globals = globals;
+
+
+      // Pages
+      let entries = data.items;
+
+      let blogPosts = _.filter(entries, e =>  e.sys.contentType.sys.id == 'blog');
+      blogPosts.map((post, i) => {
+        post.slug = post.fields.title.replace(/\s+/g, '-').toLowerCase();
+      });
+
+      let labs = _.filter(entries, e => e.sys.contentType.sys.id == 'lab');
+      labs.map((lab, i) => {
+        lab.slug = lab.fields.name.replace(/\s+/g, '-').toLowerCase();
+      });
+
+
+      let projects =  _.filter(entries, e => e.sys.contentType.sys.id == 'project');
+      projects.map((project, i) => {
+        project.slug = project.fields.name.replace(/\s+/g, '-').toLowerCase();
+      });
+
+      // Add the data to the AppStore
+      AppStore.data.blog = blogPosts;
+      AppStore.data.labs = labs;
+      AppStore.data.projects = projects;
+
+      // Emit change
+      AppStore.data.ready = true;
+      AppStore.emitChange();
+
+      // Trigger callback (from server)
+      if (callback) {
+        callback(false, AppStore);
+      }
+    })
+    .catch(err => console.log(err));
+}
+
+
+export function getPageData(page_slug, post_slug) {
+
+  if (!page_slug) {
+    page_slug = 'blog';
+  }
+
+  // Get page info
+  const data = AppStore.data
+  let page = data[page_slug] || {};
+
+  if (post_slug) {
+    const post = _.findWhere(page, { slug: post_slug });
+    if (post) {
+      page = post;
+      page.title = post.fields.title || post.fields.name;
+    } else {
+      page = {
+        title: 'Page not found!'
+      }
+    }
+  } else {
+    page.title = page_slug.charAt(0).toUpperCase() + page_slug.slice(1);
+  }
+
+
+  AppStore.data.page = page;
+  AppStore.emitChange();
+}
+
+export function getMoreItems() {
+
+  AppStore.data.loading = true;
+  AppStore.emitChange();
+
+  setTimeout(function() {
+    let item_num = AppStore.data.item_num;
+    let more_item_num = item_num * 2;
+    AppStore.data.item_num = more_item_num;
+    AppStore.data.loading = false;
+    AppStore.emitChange();
+  }, 300);
+}
