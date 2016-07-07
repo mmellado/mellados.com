@@ -26,7 +26,7 @@ export default (
     <Route path="/projects/:slug" component={Project}/>
     <Route path="blog" component={Blog}/>
     <Route path="/blog/:slug" component={BlogPost}/>
-    <Route path="*" component={NoMatch}/>
     <Route path="contact" component={Default}/>
+    <Route path="*" component={NoMatch}/>
   </Route>
 )
