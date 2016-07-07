@@ -14,7 +14,7 @@ export default class Default extends Component {
     this.getPageData()
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
     const data = this.props.data
     document.title = config.site.title + ' | ' + data.page.title
 

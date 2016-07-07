@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
-import _ from 'lodash'
-import config from '../../config'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import _ from 'lodash';
+import config from '../../config';
 
 
 // Dispatcher
-import AppDispatcher from '../../dispatcher/AppDispatcher'
+import AppDispatcher from '../../dispatcher/AppDispatcher';
+
+import Loader from '../Partials/Loading';
 
 export default class Blog extends Component {
 
@@ -27,7 +29,6 @@ export default class Blog extends Component {
   }
 
   _getMoreArticles() {
-    console.log('getting more articles')
     AppDispatcher.dispatch({
       action: 'get-more-items'
     });
@@ -43,10 +44,10 @@ export default class Blog extends Component {
     let show_more_text = 'Show More';
 
     if (data.loading) {
-      show_more_text = 'Loading...';
+      show_more_text = <Loader />;
     }
 
-    if (blogPosts && num_items <= blogPosts.length) {
+    if (blogPosts && num_items < blogPosts.length) {
       load_more = (
         <div>
           <button className="btn btn-default center-block" onClick={ this._getMoreArticles }>
@@ -57,8 +58,6 @@ export default class Blog extends Component {
     }
 
     blogPosts = _.take(blogPosts, num_items);
-
-    console.log(blogPosts)
 
     let blog_html = blogPosts.map((blogPost) => {
       let dateObj = new Date(blogPost.sys.createdAt);

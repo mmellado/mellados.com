@@ -16,7 +16,6 @@ export default _.extend({}, EventEmitter.prototype, {
   // Emit Change event
   emitChange: function() {
     this.emit('change');
-    console.log('change emitted')
   },
 
   // Add change listener

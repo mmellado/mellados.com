@@ -12,7 +12,7 @@ export default class Default extends Component {
     this._getPageData();
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const data = this.props.data;
     document.title = config.site.title + ' | ' + data.page.title;
 
@@ -48,7 +48,6 @@ export default class Default extends Component {
     let main_content = galleryItems.map((item, i) => {
 
       let thumbnail = '';
-      //console.log(item.fields.thumbnail)
       if (item.fields.thumbnail && item.fields.thumbnail.fields) {
         thumbnail = (<img src={item.fields.thumbnail.fields.file.url} alt={item.fields.name} />);
       }
