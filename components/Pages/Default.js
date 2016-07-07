@@ -6,6 +6,8 @@ import config from '../../config'
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
 
+import Loader from '../Partials/Loading'
+
 export default class Default extends Component {
 
   componentWillMount(){
@@ -48,6 +50,7 @@ export default class Default extends Component {
         <div id="main-content" className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <Loader />
             { main_content }
             </div>
           </div>

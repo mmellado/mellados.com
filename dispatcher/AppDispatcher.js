@@ -12,15 +12,15 @@ AppDispatcher.register((payload) => {
   switch(action) {
 
     case 'get-app-store':
-      getStore()
+      getStore();
       break
 
     case 'get-page-data':
-      getPageData(payload.page_slug, payload.post_slug)
+      getPageData(payload.page_slug, payload.post_slug);
       break
 
     case 'get-more-items':
-      getMoreItems()
+      getMoreItems();
       break
 
     default:

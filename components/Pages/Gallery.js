@@ -36,6 +36,10 @@ export default class Default extends Component {
     });
   }
 
+  _scrollTop() {
+    $('html, body').scrollTop(0);
+  }
+
   render(){
 
     const slug = this._getSlug();
@@ -51,7 +55,7 @@ export default class Default extends Component {
 
       return (
         <li key={`key-${item.sys.id}`}>
-          <Link to={`/${slug}/${item.slug}`} onClick={ this.scrollTop }>
+          <Link to={`/${slug}/${item.slug}`} onClick={ this._scrollTop }>
             { thumbnail }
             <p className="title">{item.fields.name}</p>
           </Link>

@@ -9,6 +9,8 @@ var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
 var stream = require('webpack-stream');
 var shell = require('gulp-shell');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 var path = {
   ALL: ['components/**/*.js', 'static/js/**/*.js'],
@@ -24,12 +26,20 @@ gulp.task('bower-files', function() {
 gulp.task('scss-compilation-dev', function() {
   gulp.src(['static/scss/main.scss'])
   .pipe(sass().on('error', sass.logError))
+  .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
   .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('scss-compilation-prod', function() {
   gulp.src(['static/scss/main.scss'])
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
   .pipe(gulp.dest('public/css'));
 });
 

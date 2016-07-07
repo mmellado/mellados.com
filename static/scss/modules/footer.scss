@@ -1,0 +1,48 @@
+footer {
+  background: rgba(0,0,0,0);
+  box-sizing: border-box;
+  color: $black;
+  height: 100vh;
+  padding: 15px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100px;
+  z-index: 2;
+
+  .footer-title {
+    color: $black;
+    font-size: 16px;
+    margin-top: 83px;
+    position: absolute;
+    right: -5px;
+    transform-origin: 50% 50%;
+    transform: rotateZ(90deg);
+    width: 120px;
+
+    transition: color 0.7s ease-out;
+  }
+
+  ul {
+    margin-top: 160px;
+  }
+
+  .footer-item {
+    color: $black;
+    fill: $black;
+    text-decoration: none;
+
+    transition: color 0.7s ease-out, fill 0.7s ease-out;
+  }
+}
+
+.open-nav footer {
+  .footer-title {
+    color: $white;
+  }
+
+  .footer-item {
+    color: $white;
+    fill: $white;
+  }
+}

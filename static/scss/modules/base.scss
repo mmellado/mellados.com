@@ -3,9 +3,10 @@
 }
 
 #main-content {
-  position: relative;
-  z-index: 1;
   box-sizing: border-box;
   margin-left: 100px;
+  margin-right: 100px;
   padding: 100px;
+  position: relative;
+  z-index: 1;
 }

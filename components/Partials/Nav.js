@@ -11,10 +11,12 @@ export default class Nav extends Component {
   _handleMenuClick() {
     $('html, body').scrollTop(0);
     $('nav').toggleClass('open');
+    $('#js-body').toggleClass('open-nav');
   }
 
   _toggleMenu() {
     $('nav').toggleClass('open');
+    $('#js-body').toggleClass('open-nav');
   }
 
   render(){
@@ -23,8 +25,8 @@ export default class Nav extends Component {
     const nav_items = data.globals.nav_items;
 
     // Prevent initial null
-    if(!nav_items){
-      return <div>No nav items</div>
+    if (!nav_items) {
+      return (<li>No nav items</li>);
     }
 
     const menu_items = nav_items.map(( nav_item ) => {

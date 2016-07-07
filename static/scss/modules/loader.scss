@@ -4,17 +4,16 @@
 
   width: 50px;
   height: 50px;
-  display: inline-block;
   box-sizing: border-box;
   position: relative;
-  margin: 25px;
+  margin: 0 auto;
 
   .dot {
     width: $SMALL_DOT_SIZE + px;
     height: $SMALL_DOT_SIZE + px;
     border-radius: 100%;
     display: inline-block;
-    background: #fff;
+    background: #000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

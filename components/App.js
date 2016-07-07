@@ -20,7 +20,7 @@ export default class App extends Component {
   }
 
   // Remove change listeners from stores
-  componentWillUnmount() {
+  componentDidUnmount() {
     AppStore.removeChangeListener(this._onChange.bind(this));
   }
 

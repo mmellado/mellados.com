@@ -18,26 +18,8 @@ export function getStore(callback) {
       // Globals
       let globals = AppStore.data.globals;
 
-      globals.nav_items = [{
-        title: 'About',
-        value: ''
-      },
-      {
-        title: 'Blog',
-        value: 'blog'
-      },
-      {
-        title: 'Projects',
-        value: 'projects'
-      },
-      {
-        title: 'Labs',
-        value: 'labs'
-      },
-      {
-        title: 'Contact',
-        value: 'contact'
-      }];
+      globals.nav_items = config.nav_items;
+      globals.footer_items = config.footer_items;
 
       AppStore.data.globals = globals;
 
@@ -114,9 +96,9 @@ export function getMoreItems() {
   AppStore.emitChange();
 
   setTimeout(function() {
-    let item_num = AppStore.data.item_num;
-    let more_item_num = item_num * 2;
-    AppStore.data.item_num = more_item_num;
+    let data = AppStore.data;
+    let displayed_items = data.displayed_items + data.num_items;
+    AppStore.data.displayed_items = displayed_items;
     AppStore.data.loading = false;
     AppStore.emitChange();
   }, 300);

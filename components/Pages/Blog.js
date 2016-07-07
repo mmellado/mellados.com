@@ -27,6 +27,7 @@ export default class Blog extends Component {
   }
 
   _getMoreArticles() {
+    console.log('getting more articles')
     AppDispatcher.dispatch({
       action: 'get-more-items'
     });
@@ -35,7 +36,7 @@ export default class Blog extends Component {
   render(){
     const data = this.props.data;
 
-    let item_num = data.item_num;
+    let num_items = data.displayed_items;
     let blogPosts = data.blog;
 
     let load_more;
@@ -45,17 +46,19 @@ export default class Blog extends Component {
       show_more_text = 'Loading...';
     }
 
-    if (blogPosts && item_num <= blogPosts.length) {
+    if (blogPosts && num_items <= blogPosts.length) {
       load_more = (
         <div>
-          <button className="btn btn-default center-block" onClick={ this.props._getMoreArticles.bind(this) }>
+          <button className="btn btn-default center-block" onClick={ this._getMoreArticles }>
             { show_more_text }
           </button>
         </div>
       );
     }
 
-    blogPosts = _.take(blogPosts, item_num);
+    blogPosts = _.take(blogPosts, num_items);
+
+    console.log(blogPosts)
 
     let blog_html = blogPosts.map((blogPost) => {
       let dateObj = new Date(blogPost.sys.createdAt);
