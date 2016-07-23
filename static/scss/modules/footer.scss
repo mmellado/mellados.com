@@ -25,6 +25,7 @@ footer {
 
   ul {
     margin-top: 160px;
+    transform-origin: 50% 50%;
   }
 
   .footer-item {
@@ -33,6 +34,38 @@ footer {
     text-decoration: none;
 
     transition: color 0.7s ease-out, fill 0.7s ease-out;
+  }
+
+  &.open {
+    width: 100vw;
+    height: auto;
+
+    .footer-title {
+      opacity: 0;
+    }
+
+    ul {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      transition: left 0.7s ease-out;
+    }
+
+    li {
+      display: inline;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .footer-item {
+      font-size: 25px;
+
+      transition: font-size 0.7s ease-out;
+    }
   }
 }
 

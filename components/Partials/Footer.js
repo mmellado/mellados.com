@@ -6,10 +6,15 @@ export default class Footer extends Component {
 
     const data = this.props.data;
     const footer_items = data.globals.footer_items;
+    let footerClass = '';
 
     // Prevent initial null
     if (!footer_items) {
       return (<li>No footer items</li>);
+    }
+
+    if (data.isContactOpen) {
+      footerClass = 'open';
     }
 
     let footer_markup = footer_items.map(footer_item => {
@@ -24,7 +29,7 @@ export default class Footer extends Component {
     });
 
     return (
-      <footer>
+      <footer className={ footerClass }>
         <h4 className="footer-title">- around the web</h4>
         <ul>
           { footer_markup }

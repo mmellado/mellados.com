@@ -1,8 +1,7 @@
-// AppDispatcher.js
-import { Dispatcher } from 'flux'
-import { getStore, getPageData, getMoreItems } from '../actions/actions'
+import { Dispatcher } from 'flux';
+import { getStore, getPageData, getMoreItems, updateNavStatus, updateContactStatus } from '../actions/actions';
 
-const AppDispatcher = new Dispatcher()
+const AppDispatcher = new Dispatcher();
 
 // Register callback with AppDispatcher
 AppDispatcher.register((payload) => {
@@ -13,23 +12,31 @@ AppDispatcher.register((payload) => {
 
     case 'get-app-store':
       getStore();
-      break
+      break;
 
     case 'get-page-data':
       getPageData(payload.page_slug, payload.post_slug);
-      break
+      break;
 
     case 'get-more-items':
       getMoreItems();
-      break
+      break;
+
+    case 'update-nav-status':
+      updateNavStatus();
+      break;
+
+    case 'update-contact-status':
+      updateContactStatus();
+      break;
 
     default:
-      return true
+      return true;
 
   }
 
-  return true
+  return true;
 
-})
+});
 
-export default AppDispatcher
+export default AppDispatcher;

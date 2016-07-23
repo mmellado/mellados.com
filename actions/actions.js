@@ -103,3 +103,13 @@ export function getMoreItems() {
     AppStore.emitChange();
   }, 300);
 }
+
+export function updateNavStatus() {
+  AppStore.data.isNavOpen = !AppStore.data.isNavOpen;
+  AppStore.emitChange();
+}
+
+export function updateContactStatus() {
+  AppStore.data.isContactOpen = !AppStore.data.isContactOpen;
+  AppStore.emitChange();
+}

@@ -9,6 +9,8 @@ export default _.extend({}, EventEmitter.prototype, {
     ready: false,
     globals: {},
     page: [],
+    isNavOpen: false,
+    isContactOpen: false,
     num_items: config.blog.num_items,
     displayed_items: config.blog.num_items
   },

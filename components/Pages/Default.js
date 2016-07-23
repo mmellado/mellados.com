@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import config from '../../config'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher'
@@ -46,16 +47,20 @@ export default class Default extends Component {
     let main_content = <div dangerouslySetInnerHTML={ {__html: page.content } }></div>
 
     return (
-       <div>
-        <div id="main-content" className="container">
-          <div className="row">
-            <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <Loader />
-            { main_content }
+      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
+        <div id="main-content" className="container contact">
+
+            <div className="row">
+              <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <Loader />
+              { main_content }
+              omg omg omg
+
+              </div>
             </div>
-          </div>
+
         </div>
-      </div>
+      </ReactCSSTransitionGroup>
     )
   }
 }

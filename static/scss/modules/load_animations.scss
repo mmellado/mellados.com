@@ -1,0 +1,13 @@
+.load-appear,
+.load-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.load-appear-active,
+.load-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+  transition-delay: 0.7s;
+}

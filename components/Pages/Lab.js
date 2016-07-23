@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Remarkable from 'remarkable';
@@ -43,12 +44,14 @@ export default class Blog extends Component {
     let md = new Remarkable();
 
     return (
-      <div id="main-content" className="lab">
-        <Link to="/labs">&lt;&lt; Back to Labs</Link>
-        <h2>{ lab.fields.name }</h2>
-        <div className="description" dangerouslySetInnerHTML={ {__html: md.render(lab.fields.description) } }></div>
-        <div className="pen" dangerouslySetInnerHTML={ {__html: lab.fields.embededCodepen } }></div>
-      </div>
+      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
+        <div id="main-content" className="lab">
+          <Link to="/labs">&lt;&lt; Back to Labs</Link>
+          <h2>{ lab.fields.name }</h2>
+          <div className="description" dangerouslySetInnerHTML={ {__html: md.render(lab.fields.description) } }></div>
+          <div className="pen" dangerouslySetInnerHTML={ {__html: lab.fields.embededCodepen } }></div>
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
