@@ -137,45 +137,68 @@ footer {
     font-size: 16px;
     margin-top: 83px;
     position: absolute;
-    right: -5px;
+    right: -10px;
     transform-origin: 50% 50%;
     transform: rotateZ(90deg);
     width: 120px;
     transition: color 0.7s ease-out; }
   footer ul {
     margin-top: 160px;
-    transform-origin: 50% 50%; }
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: 50% 50%;
+    width: 25px; }
+  footer li {
+    margin-bottom: 5px;
+    position: relative;
+    width: 25px; }
+  footer li:hover .tooltip {
+    height: auto;
+    opacity: 1;
+    width: auto; }
+  footer .tooltip {
+    color: #000;
+    font-size: 25px;
+    height: 0;
+    line-height: 25px;
+    opacity: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    position: absolute;
+    right: 35px;
+    width: 0; }
+    footer .tooltip:after {
+      background: #eaff00;
+      bottom: 5px;
+      content: "";
+      display: block;
+      height: 5px;
+      position: absolute;
+      width: 100%;
+      z-index: -1; }
   footer .footer-item {
     color: #000;
     fill: #000;
     text-decoration: none;
-    transition: color 0.7s ease-out, fill 0.7s ease-out; }
-  footer.open {
-    width: 100vw;
-    height: auto; }
-    footer.open .footer-title {
-      opacity: 0; }
-    footer.open ul {
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transition: left 0.7s ease-out; }
-    footer.open li {
-      display: inline;
-      margin-right: 20px; }
-      footer.open li:last-child {
-        margin-right: 0; }
-    footer.open .footer-item {
-      font-size: 25px;
-      transition: font-size 0.7s ease-out; }
+    transition: color 0.5s ease-out; }
+  footer .icon {
+    height: 25px;
+    width: 25px; }
+    footer .icon path {
+      fill: #000 !important;
+      transition: fill 0.5s ease-out; }
 
 .open-nav footer .footer-title {
   color: #fff; }
 
+.open-nav footer .icon path {
+  fill: #fff !important; }
+
+.open-nav footer .tooltip {
+  color: #fff; }
+
 .open-nav footer .footer-item {
-  color: #fff;
-  fill: #fff; }
+  color: #fff; }
 
 .loader {
   width: 50px;

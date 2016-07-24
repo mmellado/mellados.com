@@ -22,7 +22,8 @@ export default class Footer extends Component {
       return (
         <li key={ `key-${slug}` }>
           <a href={footer_item.url} target="_blank" className={ `footer-item ${slug}` }>
-            { footer_item.service }
+            <span dangerouslySetInnerHTML={ {__html: footer_item.icon } }></span>
+            <span className="tooltip">{footer_item.service}</span>
           </a>
         </li>
       );
