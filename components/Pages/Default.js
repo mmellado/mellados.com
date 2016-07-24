@@ -1,13 +1,11 @@
-// Default.js
-import React, { Component } from 'react'
-import { Link } from 'react-router'
-import config from '../../config'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import config from '../../config';
 
 // Dispatcher
-import AppDispatcher from '../../dispatcher/AppDispatcher'
+import AppDispatcher from '../../dispatcher/AppDispatcher';
 
-import Loader from '../Partials/Loading'
+import Loader from '../Partials/Loading';
 
 export default class Default extends Component {
 
@@ -40,27 +38,22 @@ export default class Default extends Component {
 
   render(){
 
-    const slug = this.getSlug()
-    const data = this.props.data
-    const page = data.page
+    const slug = this.getSlug();
+    const data = this.props.data;
+    const page = data.page;
 
     let main_content = <div dangerouslySetInnerHTML={ {__html: page.content } }></div>
 
     return (
-      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
-        <div id="main-content" className="container contact">
-
-            <div className="row">
-              <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              <Loader />
-              { main_content }
-              omg omg omg
-
-              </div>
-            </div>
-
+      <div id="main-content" className="container contact">
+        <div className="row">
+          <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <Loader />
+            { main_content }
+            omg omg omg
+          </div>
         </div>
-      </ReactCSSTransitionGroup>
+      </div>
     )
   }
 }

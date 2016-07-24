@@ -10,14 +10,14 @@ nav {
   width: 100px;
   z-index: 2;
 
-  transition: width 0.7s ease-out;
+  transition: width $animation-delay ease-out;
 
   .logo {
     color: $black;
     left: 150px;
     position: absolute;
 
-    transition: color 0.7s ease-out;
+    transition: color $animation-delay ease-out;
   }
 
   ul {
@@ -27,7 +27,7 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    transition: opacity 0.7s ease-out;
+    transition: opacity $animation-delay ease-out;
 
     a {
       color: $white;

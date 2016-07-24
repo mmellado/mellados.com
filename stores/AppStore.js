@@ -12,7 +12,8 @@ export default _.extend({}, EventEmitter.prototype, {
     isNavOpen: false,
     isContactOpen: false,
     num_items: config.blog.num_items,
-    displayed_items: config.blog.num_items
+    displayed_items: config.blog.num_items,
+    animation_timeout: config.animations.timeout
   },
 
   // Emit Change event

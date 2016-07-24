@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import config from '../../config';
 
@@ -41,9 +40,9 @@ export default class Default extends Component {
   }
 
   render(){
-
+    const data = this.props.data;
     const slug = this._getSlug();
-    const galleryItems = this.props.data[slug];
+    const galleryItems = data[slug];
 
     let main_content = galleryItems.map((item, i) => {
 
@@ -63,13 +62,11 @@ export default class Default extends Component {
     })
 
     return (
-      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
-        <div id="main-content" className={`gallery ${slug}`}>
-          <ul>
-            { main_content }
-          </ul>
-        </div>
-      </ReactCSSTransitionGroup>
+      <div id="main-content" className={`gallery ${slug}`}>
+        <ul>
+          { main_content }
+        </ul>
+      </div>
     )
   }
 }

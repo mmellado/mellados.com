@@ -1,13 +1,59 @@
+.animation-container {
+  position: relative;
+}
+
 .load-appear,
 .load-enter {
-  transform: scale(0);
   opacity: 0;
+  transform: translateX(100vw);
 }
 
 .load-appear-active,
 .load-enter-active {
-  transform: scale(1);
   opacity: 1;
-  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-  transition-delay: 0.7s;
+  transform: translateX(0);
+  transition: transform $animation-delay ease-out,
+              opacity $animation-delay ease-out;
+  transition-delay: $animation-delay;
+}
+
+.load-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.load-leave-active {
+  opacity: 0;
+  transform: translateX(-100vw);
+  transition: transform $animation-delay ease-in,
+              opacity $animation-delay ease-in;
+  transition-delay: 0;
+}
+
+.back-appear,
+.back-enter {
+  opacity: 0;
+  transform: translateX(-100vw);
+}
+
+.back-appear-active,
+.back-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform $animation-delay ease-out,
+              opacity $animation-delay ease-out;
+  transition-delay: $animation-delay;
+}
+
+.back-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.back-leave-active {
+  opacity: 0;
+  transform: translateX(100vw);
+  transition: transform $animation-delay ease-in,
+              opacity $animation-delay ease-in;
+  transition-delay: 0;
 }

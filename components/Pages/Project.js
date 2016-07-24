@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Remarkable from 'remarkable';
@@ -32,8 +31,8 @@ export default class Blog extends Component {
   }
 
   render() {
-
-    const project = this.props.data.page;
+    const data = this.props.data;
+    const project = data.page;
 
     if (!project.fields) {
       return(
@@ -44,16 +43,14 @@ export default class Blog extends Component {
     let md = new Remarkable();
 
     return (
-      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
-        <div id="main-content" className="project">
-          <Link to="/projects">&lt;&lt; Back to Projects</Link>
-          <h2>{ project.fields.name }</h2>
-          <div className="description" dangerouslySetInnerHTML={ {__html: md.render(project.fields.description) } }></div>
-          <a href={project.fields.githuburl} target="_blank">See on GitHub</a>
-          <h3>Demo</h3>
-          <div className="pen" dangerouslySetInnerHTML={ {__html: project.fields.embededCodepen } }></div>
-        </div>
-      </ReactCSSTransitionGroup>
+      <div id="main-content" className="project">
+        <Link to="/projects">&lt;&lt; Back to Projects</Link>
+        <h2>{ project.fields.name }</h2>
+        <div className="description" dangerouslySetInnerHTML={ {__html: md.render(project.fields.description) } }></div>
+        <a href={project.fields.githuburl} target="_blank">See on GitHub</a>
+        <h3>Demo</h3>
+        <div className="pen" dangerouslySetInnerHTML={ {__html: project.fields.embededCodepen } }></div>
+      </div>
     );
   }
 }

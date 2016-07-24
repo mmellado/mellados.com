@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import config from '../../config';
@@ -37,11 +36,10 @@ export default class Blog extends Component {
 
   render(){
     const data = this.props.data;
-
-    let num_items = data.displayed_items;
-    let blogPosts = data.blog;
+    const num_items = data.displayed_items;
 
     let load_more;
+    let blogPosts = data.blog;
     let show_more_text = 'Show More';
 
     if (data.loading) {
@@ -73,14 +71,12 @@ export default class Blog extends Component {
     });
 
     return (
-      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
-        <div id="main-content" className="blog">
-          <ul>
-            { blog_html }
-          </ul>
-          { load_more }
-        </div>
-      </ReactCSSTransitionGroup>
+      <div id="main-content" className="blog">
+        <ul>
+          { blog_html }
+        </ul>
+        { load_more }
+      </div>
     );
   }
 }

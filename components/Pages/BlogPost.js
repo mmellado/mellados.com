@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Remarkable from 'remarkable';
@@ -32,8 +31,8 @@ export default class Blog extends Component {
   }
 
   render() {
-
-    const post = this.props.data.page;
+    const data = this.props.data;
+    const post = data.page;
 
     if (!post.fields) {
       return(
@@ -44,13 +43,11 @@ export default class Blog extends Component {
     let md = new Remarkable();
 
     return (
-      <ReactCSSTransitionGroup transitionName="load" transitionAppear={true} transitionAppearTimeout={1500} transitionEnterTimeout={1500} transitionLeaveTimeout={1500}>
-        <div id="main-content" className="blog-post">
-          <Link to="/blog">&lt;&lt; Back to Blog</Link>
-          <h2>{ post.fields.title }</h2>
-          <div dangerouslySetInnerHTML={ {__html: md.render(post.fields.body) } }></div>
-        </div>
-      </ReactCSSTransitionGroup>
+      <div id="main-content" className="blog-post">
+        <Link to="/blog">&lt;&lt; Back to Blog</Link>
+        <h2>{ post.fields.title }</h2>
+        <div dangerouslySetInnerHTML={ {__html: md.render(post.fields.body) } }></div>
+      </div>
     );
   }
 }

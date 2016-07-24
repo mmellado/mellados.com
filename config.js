@@ -1,4 +1,3 @@
-// config.js
 export default {
   site: {
     title: 'Marcos Mellado'
@@ -45,5 +44,8 @@ export default {
   }],
   blog: {
     num_items: 1
+  },
+  animations: {
+    timeout: 700
   }
 }
