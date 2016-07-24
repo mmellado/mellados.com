@@ -113,3 +113,11 @@ export function updateContactStatus() {
   AppStore.data.isContactOpen = !AppStore.data.isContactOpen;
   AppStore.emitChange();
 }
+
+export function updateBgColor() {
+  const colorClasses = ['white', 'blue', 'pink', 'orange'];
+  let index = Math.floor(Math.random() * colorClasses.length);
+  let bgColor = colorClasses[index];
+
+  $('body').removeClass().addClass('bg-' + bgColor)
+}

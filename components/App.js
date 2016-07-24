@@ -30,6 +30,12 @@ export default class App extends Component {
     });
   }
 
+  _setBgColor() {
+    AppDispatcher.dispatch({
+      action: 'update-bg-color'
+    });
+  }
+
   _onChange() {
     this.setState(AppStore);
   }
@@ -44,6 +50,7 @@ export default class App extends Component {
 
       document.body.className = '';
       this._getStore();
+      this._setBgColor();
 
       return (
         <div className="container text-center">
@@ -67,9 +74,9 @@ export default class App extends Component {
           transitionName={transitionName}
           transitionAppear={true}
           transitionLeave={true}
-          transitionAppearTimeout={1000}
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={500}
+          transitionAppearTimeout={timeout * 2}
+          transitionEnterTimeout={timeout * 2}
+          transitionLeaveTimeout={timeout}
           component="div"
           className="animation-container">
 

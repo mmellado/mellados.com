@@ -2,58 +2,68 @@
   position: relative;
 }
 
-.load-appear,
-.load-enter {
-  opacity: 0;
-  transform: translateX(100vw);
-}
+#main-content {
+  &.load-appear,
+  &.load-enter {
+    opacity: 0;
+    position: absolute;
+    transform: translateX(100vw);
+    top: 0;
+  }
 
-.load-appear-active,
-.load-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: transform $animation-delay ease-out,
-              opacity $animation-delay ease-out;
-  transition-delay: $animation-delay;
-}
+  &.load-appear-active,
+  &.load-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform $animation-delay ease-out,
+                opacity $animation-delay ease-out;
+    transition-delay: $animation-delay;
+  }
 
-.load-leave {
-  opacity: 1;
-  transform: translateX(0);
-}
+  &.load-leave {
+    opacity: 1;
+    position: absolute;
+    transform: translateX(0);
+    top: 0;
+  }
 
-.load-leave-active {
-  opacity: 0;
-  transform: translateX(-100vw);
-  transition: transform $animation-delay ease-in,
-              opacity $animation-delay ease-in;
-  transition-delay: 0;
-}
+  &.load-leave-active {
+    opacity: 0;
+    transform: translateX(-100vw);
+    transition: transform $animation-delay ease-in,
+                opacity $animation-delay ease-in;
+    transition-delay: 0;
+  }
 
-.back-appear,
-.back-enter {
-  opacity: 0;
-  transform: translateX(-100vw);
-}
+  &.back-appear,
+  &.back-enter {
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-100vw);
+    top: 0;
+  }
 
-.back-appear-active,
-.back-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: transform $animation-delay ease-out,
-              opacity $animation-delay ease-out;
-  transition-delay: $animation-delay;
-}
+  &.back-appear-active,
+  &.back-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform $animation-delay ease-out,
+                opacity $animation-delay ease-out;
+    transition-delay: $animation-delay;
+  }
 
-.back-leave {
-  opacity: 1;
-  transform: translateX(0);
-}
+  &.back-leave {
+    opacity: 1;
+    position: absolute;
+    transform: translateX(0);
+    top: 0;
+  }
 
-.back-leave-active {
-  opacity: 0;
-  transform: translateX(100vw);
-  transition: transform $animation-delay ease-in,
-              opacity $animation-delay ease-in;
-  transition-delay: 0;
+  &.back-leave-active {
+    opacity: 0;
+    transform: translateX(100vw);
+    transition: transform $animation-delay ease-in,
+                opacity $animation-delay ease-in;
+    transition-delay: 0;
+  }
 }

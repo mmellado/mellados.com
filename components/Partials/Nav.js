@@ -25,6 +25,12 @@ export default class Nav extends Component {
     });
   }
 
+  _updateBgColor() {
+    AppDispatcher.dispatch({
+      action: 'update-bg-color'
+    });
+  }
+
   render(){
 
     const data = this.props.data;
@@ -38,6 +44,8 @@ export default class Nav extends Component {
 
     if (data.isNavOpen) {
       navClass = 'open';
+    } else {
+      this._updateBgColor();
     }
 
     const menu_items = nav_items.map(nav_item => {
