@@ -52,7 +52,7 @@ export default class Default extends Component {
       }
 
       return (
-        <li key={`key-${item.sys.id}`}>
+        <li key={`key-${item.sys.id}`} className={item.slug}>
           <Link to={`/${slug}/${item.slug}`} onClick={ this._scrollTop }>
             { thumbnail }
             <p className="title"><span className="text">{item.fields.name}</span></p>
@@ -63,6 +63,7 @@ export default class Default extends Component {
 
     return (
       <div id="main-content" className={`gallery ${slug}`}>
+        <h1 className="title">{slug}</h1>
         <ul className="gallery-grid">
           { main_content }
         </ul>
