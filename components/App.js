@@ -41,8 +41,6 @@ export default class App extends Component {
 
     // Show loading for browser
     if (!data.ready) {
-
-      document.body.className = '';
       this._getStore();
 
       return (
@@ -59,6 +57,8 @@ export default class App extends Component {
       data: data,
       key: path
     });
+
+    //document.body.className = '';
 
     return (
       <div id="js-body" className={data.titleColor}>

@@ -90,7 +90,6 @@ export function getPageData(page_slug, post_slug) {
     page.title = pageTitle;
   }
 
-
   AppStore.data.pageTitle = pageTitle;
   AppStore.data.page = page;
   AppStore.emitChange();
