@@ -1,29 +1,75 @@
-body {
-  &.bg-white {
-    background: $white;
+#js-body {
+  position: relative;
+
+  &.yellow-title {
+    h1.title {
+      color: $yellow;
+    }
+
+    a:after,
+    .underline-hover:after {
+      background: $yellow;
+    }
   }
 
-  &.bg-blue {
-    background: $blue;
+  &.blue-title {
+    h1.title {
+      color: $blue;
+    }
+
+    a:after,
+    .underline-hover:after {
+      background: $blue;
+    }
   }
 
-  &.bg-pink {
-    background: $pink;
+  &.pink-title {
+    h1.title {
+      color: $pink;
+    }
+
+    a:after,
+    .underline-hover:after {
+      background: $pink;
+    }
   }
 
-  &.bg-orange {
-    background: $orange;
+  &.orange-title {
+    h1.title {
+      color: $orange;
+    }
+
+    a:after,
+    .underline-hover:after {
+      background: $orange;
+    }
   }
 }
 
-#js-body {
+a,
+.underline-hover {
   position: relative;
+}
+
+a:hover:after,
+.underline-hover:after {
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 5px;
+  left: 5px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+a.no-underline:hover:after {
+  display: none;
 }
 
 #main-content {
   box-sizing: border-box;
   margin-left: 100px;
-  margin-right: 100px;
   padding: 100px;
   position: relative;
   top: 0;
@@ -32,8 +78,14 @@ body {
 
 h1.title {
   font-size: 50px;
-  position: absolute;
-  right: 0;
-  transform-origin: 50% 50%;
-  transform: rotate(90deg);
+  position: fixed;
+  text-align: right;
+  top: 75px;
+
+  span {
+    display: block;
+    transform-origin: right;
+    transform: rotate(-90deg);
+    width: 150px;
+  }
 }

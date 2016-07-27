@@ -14,10 +14,15 @@ nav {
 
   .logo {
     color: $black;
-    left: 150px;
-    position: absolute;
+    left: 132px;
+    position: fixed;
+    top: 44px;
 
     transition: color $animation-delay ease-out;
+
+    &:hover:after {
+      display: none;
+    }
   }
 
   ul {
@@ -35,17 +40,10 @@ nav {
       position: relative;
       text-decoration: none;
 
-      &:hover {
-        &:after {
-          background: $yellow;
-          bottom: 10px;
-          content: "";
-          display: block;
-          height: 10px;
-          position: absolute;
-          width: 100%;
-          z-index: -1;
-        }
+      &:hover:after {
+        bottom: 10px;
+        height: 10px;
+        left: 10px;
       }
     }
   }

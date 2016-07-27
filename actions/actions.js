@@ -50,6 +50,7 @@ export function getStore(callback) {
 
       // Emit change
       AppStore.data.ready = true;
+      setTitleColor();
       AppStore.emitChange();
 
       // Trigger callback (from server)
@@ -63,8 +64,12 @@ export function getStore(callback) {
 
 export function getPageData(page_slug, post_slug) {
 
+  let pageTitle;
+
   if (!page_slug) {
-    page_slug = 'blog';
+    pageTitle = 'Hello!';
+  } else {
+    pageTitle = page_slug.charAt(0).toUpperCase() + page_slug.slice(1);
   }
 
   // Get page info
@@ -82,10 +87,10 @@ export function getPageData(page_slug, post_slug) {
       }
     }
   } else {
-    page.title = page_slug.charAt(0).toUpperCase() + page_slug.slice(1);
+    page.title = pageTitle;
   }
 
-
+  AppStore.data.pageTitle = pageTitle;
   AppStore.data.page = page;
   AppStore.emitChange();
 }
@@ -114,10 +119,10 @@ export function updateContactStatus() {
   AppStore.emitChange();
 }
 
-export function updateBgColor() {
-  const colorClasses = ['white', 'blue', 'pink', 'orange'];
+export function setTitleColor() {
+  const colorClasses = ['yellow', 'blue', 'pink', 'orange'];
   let index = Math.floor(Math.random() * colorClasses.length);
-  let bgColor = colorClasses[index];
+  let titleColor = colorClasses[index];
 
-  $('body').removeClass().addClass('bg-' + bgColor)
+  AppStore.data.titleColor = titleColor + '-title';
 }

@@ -13,7 +13,8 @@ export default _.extend({}, EventEmitter.prototype, {
     isContactOpen: false,
     num_items: config.blog.num_items,
     displayed_items: config.blog.num_items,
-    animation_timeout: config.animations.timeout
+    animation_timeout: config.animations.timeout,
+    titleColor: ''
   },
 
   // Emit Change event

@@ -54,17 +54,6 @@ footer {
     position: absolute;
     right: 35px;
     width: 0;
-
-    &:after {
-      background: $yellow;
-      bottom: 5px;
-      content: "";
-      display: block;
-      height: 5px;
-      position: absolute;
-      width: 100%;
-      z-index: -1;
-    }
   }
 
   .footer-item {

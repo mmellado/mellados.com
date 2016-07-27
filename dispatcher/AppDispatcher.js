@@ -3,8 +3,7 @@ import { getStore,
          getPageData,
          getMoreItems,
          updateNavStatus,
-         updateContactStatus,
-         updateBgColor } from '../actions/actions';
+         updateContactStatus } from '../actions/actions';
 
 const AppDispatcher = new Dispatcher();
 
@@ -33,10 +32,6 @@ AppDispatcher.register((payload) => {
 
     case 'update-contact-status':
       updateContactStatus();
-      break;
-
-    case 'update-bg-color':
-      updateBgColor();
       break;
 
     default:

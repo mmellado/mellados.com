@@ -30,12 +30,6 @@ export default class App extends Component {
     });
   }
 
-  _setBgColor() {
-    AppDispatcher.dispatch({
-      action: 'update-bg-color'
-    });
-  }
-
   _onChange() {
     this.setState(AppStore);
   }
@@ -50,7 +44,6 @@ export default class App extends Component {
 
       document.body.className = '';
       this._getStore();
-      this._setBgColor();
 
       return (
         <div className="container text-center">
@@ -68,7 +61,7 @@ export default class App extends Component {
     });
 
     return (
-      <div id="js-body">
+      <div id="js-body" className={data.titleColor}>
         <Nav data={ data }/>
         <ReactCSSTransitionGroup
           transitionName={transitionName}
@@ -80,6 +73,7 @@ export default class App extends Component {
           component="div"
           className="animation-container">
 
+          <h1 className="title"><span>{data.pageTitle}</span></h1>
           { Routes }
 
         </ReactCSSTransitionGroup>

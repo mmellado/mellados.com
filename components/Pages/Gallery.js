@@ -63,7 +63,6 @@ export default class Default extends Component {
 
     return (
       <div id="main-content" className={`gallery ${slug}`}>
-        <h1 className="title">{slug}</h1>
         <ul className="gallery-grid">
           { main_content }
         </ul>

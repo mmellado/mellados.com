@@ -21,9 +21,9 @@ export default class Footer extends Component {
       let slug = footer_item.service.toLowerCase();
       return (
         <li key={ `key-${slug}` }>
-          <a href={footer_item.url} target="_blank" className={ `footer-item ${slug}` }>
+          <a href={footer_item.url} target="_blank" className={ `no-underline footer-item ${slug}` }>
             <span dangerouslySetInnerHTML={ {__html: footer_item.icon } }></span>
-            <span className="tooltip">{footer_item.service}</span>
+            <span className="tooltip underline-hover">{footer_item.service}</span>
           </a>
         </li>
       );
