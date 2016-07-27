@@ -17,13 +17,13 @@ var path = {
 };
 
 gulp.task('bower-files', function() {
-  gulp.src([
+  return gulp.src([
     'bower_components/jquery/dist/jquery.min.js'])
    .pipe(gulp.dest('public/lib'))
 });
 
 gulp.task('scss-compilation-dev', function() {
-  gulp.src(['static/scss/main.scss'])
+  return gulp.src(['static/scss/main.scss'])
    .pipe(sass().on('error', sass.logError))
    .pipe(autoprefixer({
       browsers: ['last 2 versions'],

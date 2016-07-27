@@ -1,0 +1,42 @@
+.projects {
+  width: 100%;
+
+  .gallery-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  li {
+    margin-bottom: 50px;
+    width: 100%;
+
+    &.spaces-ui a {
+      width: 25%;
+    }
+  }
+
+  a {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 40%;
+
+    &:hover p {
+      opacity: 1
+    }
+
+    &:after {
+      z-index: 2;
+    }
+  }
+
+  img {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .title {
+    display: none;
+  }
+}

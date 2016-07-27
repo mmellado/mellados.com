@@ -1,7 +1,7 @@
 import config from '../config';
 import contentful from 'contentful';
 import _ from 'lodash';
-import { Router, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router';
 
 // AppStore
 import AppStore from '../stores/AppStore';
@@ -77,7 +77,7 @@ export function getPageData(page_slug, post_slug) {
   let page = data[page_slug] || {};
 
   if (post_slug) {
-    const post = _.findWhere(page, { slug: post_slug });
+    const post = _.find(page, { slug: post_slug });
     if (post) {
       page = post;
       page.title = post.fields.title || post.fields.name;
@@ -89,6 +89,7 @@ export function getPageData(page_slug, post_slug) {
   } else {
     page.title = pageTitle;
   }
+
 
   AppStore.data.pageTitle = pageTitle;
   AppStore.data.page = page;
