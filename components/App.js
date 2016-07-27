@@ -15,7 +15,7 @@ import Loading from './Partials/Loading';
 export default class App extends Component {
 
   // Add change listeners to stores
-  componentWillMount() {
+  componentDidMount() {
     AppStore.addChangeListener(this._onChange.bind(this));
   }
 
@@ -35,7 +35,7 @@ export default class App extends Component {
   }
 
   render(){
-
+    const path = this.props.location.pathname;
     const data = AppStore.data
     const timeout = data.animation_timeout;
 
@@ -52,12 +52,12 @@ export default class App extends Component {
       );
     }
 
-    let transitionName = location.pathname.split('/')[2] ? 'back' : 'load';
+    let transitionName = path.split('/')[2] ? 'back' : 'load';
 
     // Server first
     const Routes = React.cloneElement(this.props.children, {
       data: data,
-      key: location.pathname
+      key: path
     });
 
     return (

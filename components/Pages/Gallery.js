@@ -24,7 +24,7 @@ export default class Default extends Component {
   }
 
   _getSlug() {
-    return this.props.location.pathname.replace('/','');
+    return this.props.location.pathname.replace(/\//g,'');
   }
 
   _getPageData() {
