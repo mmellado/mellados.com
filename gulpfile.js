@@ -12,7 +12,15 @@ var autoprefixer = require('gulp-autoprefixer');
 
 
 var path = {
-  ALL: ['components/**/*.js', 'static/js/**/*.js'],
+  ALL: ['components/**/*.js',
+        'static/js/**/*.js',
+        'actions/**/*.js',
+        'dispatcher/**/*.js',
+        'stores/**/*.js',
+        'app-client.js',
+        'app-server.js',
+        'app.js',
+        'config.js'],
   DEST_BUILD: 'public/dist',
 };
 

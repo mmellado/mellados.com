@@ -1,33 +1,31 @@
 .projects {
-  width: 100%;
 
-  .gallery-grid {
-    column-count: 1;
-    column-gap: 0;
-  }
-
-  li {
-    margin-bottom: 50px;
+   li {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 7px;
+    text-align: center;
     width: 100%;
 
     &.spaces-ui a {
+      width: 15%;
+    }
+
+    &.slackerjs a {
       width: 25%;
     }
   }
 
   a {
+    color: $white;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 25px;
     position: relative;
-    text-align: center;
-    width: 40%;
+    width: 33%;
 
     &:hover p {
       opacity: 1
-    }
-
-    &:after {
-      z-index: 2;
     }
   }
 
