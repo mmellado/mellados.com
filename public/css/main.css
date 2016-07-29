@@ -336,9 +336,12 @@ footer {
   transition: transform 0.5s ease-in, opacity 0.5s ease-in;
   transition-delay: 0; }
 
+.labs .gallery-grid {
+  overflow: hidden; }
+
 .labs li {
   box-sizing: border-box;
-  display: inline-block;
+  float: left;
   padding: 10px;
   padding-bottom: 7px;
   width: 33%; }
@@ -351,6 +354,8 @@ footer {
   width: 100%; }
   .labs a:hover p {
     opacity: 1; }
+  .labs a:after {
+    display: none; }
 
 .labs img {
   max-width: 400px;
@@ -392,6 +397,8 @@ footer {
   width: 33%; }
   .projects a:hover p {
     opacity: 1; }
+  .projects a:after {
+    z-index: 2; }
 
 .projects img {
   max-width: 400px;

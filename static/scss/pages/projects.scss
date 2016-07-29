@@ -27,6 +27,10 @@
     &:hover p {
       opacity: 1
     }
+
+    &:after {
+      z-index: 2;
+    }
   }
 
   img {
