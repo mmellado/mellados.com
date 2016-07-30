@@ -1,0 +1,38 @@
+.contact {
+  width: 100%;
+
+  .wrapper {
+    box-sizing: border-box;
+    padding-right: 100px;
+    position: relative;
+    width: 100%;
+  }
+
+  .questions li,
+  p {
+    font-size: 25px;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+  }
+
+  .social_links {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 75px 25px 0 0;
+    }
+
+    svg {
+      height: 100px;
+      width: 100px;
+    }
+
+    path {
+      fill: $black;
+    }
+  }
+
+
+}

@@ -42,8 +42,6 @@ export default class Project extends Component {
 
     let md = new Remarkable();
 
-    console.log(project.fields)
-
     return (
       <div id="main-content" className="project">
         <Link to="/projects" className="back no-underline">
