@@ -34,7 +34,8 @@ nav {
 
     transition: opacity $animation-delay ease-out;
 
-    a {
+    a,
+    a:visited {
       color: $white;
       font-size: 50px;
       position: relative;

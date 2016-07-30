@@ -52,7 +52,13 @@
 
 a,
 .underline-hover {
+  color: $black;
   position: relative;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $black;
 }
 
 a:hover:after,
@@ -92,5 +98,23 @@ h1.title {
     transform-origin: right;
     transform: rotate(-90deg);
     width: 150px;
+  }
+}
+
+a.back {
+  float: left;
+  font-size: 30px;
+  position: fixed;
+
+  svg {
+    height: 35px;
+  }
+
+  .tooltip {
+    opacity: 0;
+  }
+
+  &:hover .tooltip {
+    opacity: 1;
   }
 }
