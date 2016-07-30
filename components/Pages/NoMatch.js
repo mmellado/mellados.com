@@ -7,16 +7,16 @@ import AppDispatcher from '../../dispatcher/AppDispatcher';
 
 export default class NoMatch extends Component {
 
-  componentWillMount(){
-    this.getPageData();
+  componentWillMount() {
+    this._getPageData();
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const data = this.props.data;
     document.title = config.site.title + ' | Page Not Found';
   }
 
-  getPageData(){
+  _getPageData() {
     AppDispatcher.dispatch({
       action: 'get-page-data',
       slug: '404'

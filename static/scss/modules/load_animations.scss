@@ -1,5 +1,5 @@
 .animation-container {
-  position: relative;
+  overflow: hidden;
 
   &:before,
   &:after {

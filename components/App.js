@@ -36,12 +36,11 @@ export default class App extends Component {
 
   render(){
     const path = this.props.location.pathname;
-    const data = AppStore.data
+    const data = AppStore.data;
     const timeout = data.animation_timeout;
 
     // Show loading for browser
     if (!data.ready) {
-
       document.body.className = '';
       this._getStore();
 

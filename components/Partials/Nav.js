@@ -13,39 +13,23 @@ export default class Nav extends Component {
 
   _handleLogoClick() {
     $('html, body').scrollTop(0);
-    if (this.props.data.isNavOpen) {
+    if ($('#js-body').hasClass('open-nav')) {
       this._updateNavStatus();
     }
   }
 
   _updateNavStatus() {
     $('#js-body').toggleClass('open-nav');
-    AppDispatcher.dispatch({
-      action: 'update-nav-status'
-    });
-  }
-
-  _updateBgColor() {
-    AppDispatcher.dispatch({
-      action: 'update-bg-color'
-    });
   }
 
   render(){
 
     const data = this.props.data;
     const nav_items = data.globals.nav_items;
-    let navClass = '';
 
     // Prevent initial null
     if (!nav_items) {
       return (<li>No nav items</li>);
-    }
-
-    if (data.isNavOpen) {
-      navClass = 'open';
-    } else {
-      this._updateBgColor();
     }
 
     const menu_items = nav_items.map(nav_item => {
@@ -57,7 +41,7 @@ export default class Nav extends Component {
     });
 
     return (
-      <nav className={navClass}>
+      <nav>
         <Link onClick={ this._handleLogoClick.bind(this) } className="logo" to={'/'}>Marcos Mellado</Link>
         <div className="wrapper">
           <button className="menu-toggle" onClick={ this._updateNavStatus }>

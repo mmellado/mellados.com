@@ -5,7 +5,7 @@ import config from '../../config';
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
-export default class Default extends Component {
+export default class Gallery extends Component {
 
   componentWillMount() {
     this._getPageData();

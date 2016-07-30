@@ -1,9 +1,7 @@
 import { Dispatcher } from 'flux';
 import { getStore,
          getPageData,
-         getMoreItems,
-         updateNavStatus,
-         updateContactStatus } from '../actions/actions';
+         getMoreItems } from '../actions/actions';
 
 const AppDispatcher = new Dispatcher();
 
@@ -24,14 +22,6 @@ AppDispatcher.register((payload) => {
 
     case 'get-more-items':
       getMoreItems();
-      break;
-
-    case 'update-nav-status':
-      updateNavStatus();
-      break;
-
-    case 'update-contact-status':
-      updateContactStatus();
       break;
 
     default:

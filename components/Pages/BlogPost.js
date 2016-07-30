@@ -10,7 +10,7 @@ import NoMatch from './NoMatch';
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
-export default class Blog extends Component {
+export default class BlogPost extends Component {
 
   componentWillMount() {
     this._getPageData();

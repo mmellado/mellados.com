@@ -111,16 +111,6 @@ export function getMoreItems() {
   }, 300);
 }
 
-export function updateNavStatus() {
-  AppStore.data.isNavOpen = !AppStore.data.isNavOpen;
-  AppStore.emitChange();
-}
-
-export function updateContactStatus() {
-  AppStore.data.isContactOpen = !AppStore.data.isContactOpen;
-  AppStore.emitChange();
-}
-
 export function setTitleColor() {
   const colorClasses = ['yellow', 'blue', 'pink', 'orange'];
   let index = Math.floor(Math.random() * colorClasses.length);

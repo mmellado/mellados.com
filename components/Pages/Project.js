@@ -10,7 +10,7 @@ import NoMatch from './NoMatch';
 // Dispatcher
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
-export default class Blog extends Component {
+export default class Project extends Component {
 
   componentWillMount() {
     this._getPageData();
@@ -22,7 +22,7 @@ export default class Blog extends Component {
     document.title = config.site.title + ' | ' + pageTitle;
   }
 
-  _getPageData(){
+  _getPageData() {
     AppDispatcher.dispatch({
       action: 'get-page-data',
       page_slug: 'projects',
