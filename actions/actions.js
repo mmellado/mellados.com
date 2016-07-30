@@ -67,7 +67,9 @@ export function getPageData(page_slug, post_slug) {
   let pageTitle;
 
   if (!page_slug) {
-    pageTitle = 'Hello!';
+    pageTitle = 'Page not found!';
+  } else if (page_slug == 'hello') {
+    pageTitle = 'Hello!'
   } else {
     pageTitle = page_slug.charAt(0).toUpperCase() + page_slug.slice(1);
   }

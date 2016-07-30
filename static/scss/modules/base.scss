@@ -88,6 +88,7 @@ a.no-underline:hover:after {
 
 h1.title {
   font-size: 50px;
+  left: -170px;
   position: fixed;
   text-align: right;
   top: 75px;
@@ -97,7 +98,7 @@ h1.title {
     display: block;
     transform-origin: right;
     transform: rotate(-90deg);
-    width: 150px;
+    width: 320px;
   }
 }
 

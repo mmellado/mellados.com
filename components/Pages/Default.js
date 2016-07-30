@@ -29,10 +29,10 @@ export default class Default extends Component {
   }
 
   getPageData(){
-    const page_slug = this.getSlug()
+    const page_slug = this.getSlug();
     AppDispatcher.dispatch({
       action: 'get-page-data',
-      page_slug: page_slug
+      page_slug: 'hello'
     })
   }
 

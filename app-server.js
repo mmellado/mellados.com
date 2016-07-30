@@ -31,7 +31,7 @@ app.get('*',(req, res) => {
 
       // Get page data for template
       const slug_arr = req.url.split('/')
-      let page_slug = slug_arr[1]
+      let page_slug = slug_arr[1];
       let post_slug;
       if(slug_arr[2]) {
         post_slug = slug_arr[2];
