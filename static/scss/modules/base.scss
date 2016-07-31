@@ -10,7 +10,7 @@ body {
   position: relative;
 
   &.yellow-title {
-    h1.title {
+    h2.title {
       color: $yellow;
     }
 
@@ -21,7 +21,7 @@ body {
   }
 
   &.blue-title {
-    h1.title {
+    h2.title {
       color: $blue;
     }
 
@@ -32,7 +32,7 @@ body {
   }
 
   &.pink-title {
-    h1.title {
+    h2.title {
       color: $pink;
     }
 
@@ -43,7 +43,7 @@ body {
   }
 
   &.orange-title {
-    h1.title {
+    h2.title {
       color: $orange;
     }
 
@@ -91,7 +91,7 @@ a.no-underline:hover:after {
   z-index: 1;
 }
 
-h1.title {
+h2.title {
   font-size: 50px;
   left: -253px;
   position: fixed;
@@ -123,4 +123,9 @@ a.back {
   &:hover .tooltip {
     opacity: 1;
   }
+}
+
+pre code {
+  font-family: 'Inconsolata', monospace;
+  margin: 15px 0;
 }

@@ -72,7 +72,7 @@ export default class App extends Component {
           component="div"
           className="animation-container">
 
-          <h1 className="title"><span>{data.pageTitle}</span></h1>
+          <h2 className="title"><span>{data.pageTitle}</span></h2>
           { Routes }
 
         </ReactCSSTransitionGroup>

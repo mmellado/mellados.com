@@ -64,7 +64,8 @@ export default class Blog extends Component {
       return (
         <li key={ 'key-' + blogPost.sys.id }>
           <h2 className="post-title pointer">
-            <Link to={ '/blog/' + blogPost.slug } onClick={ this.scrollTop }>{ blogPost.fields.title }</Link> <span>{ created }</span>
+            <Link to={ '/blog/' + blogPost.slug } onClick={ this.scrollTop }>{ blogPost.fields.title }</Link>
+            <p><span>By <Link to={'/'}>Marcos Mellado</Link> on {created}</span></p>
           </h2>
         </li>
       )
@@ -72,10 +73,12 @@ export default class Blog extends Component {
 
     return (
       <div id="main-content" className="blog">
-        <ul>
-          { blog_html }
-        </ul>
-        { load_more }
+        <div className="wrapper">
+          <ul>
+            { blog_html }
+          </ul>
+          { load_more }
+        </div>
       </div>
     );
   }

@@ -1,0 +1,56 @@
+.blog {
+  .wrapper {
+    padding: 0 100px;
+  }
+
+  li {
+    font-size: 35px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+.blog-post {
+
+  overflow: hidden;
+  width: 100%;
+
+
+  .wrapper {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: 100px;
+    position: relative;
+    width: 100%;
+  }
+
+  .post-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .updated,
+  .created {
+    text-align: center;
+  }
+
+  .updated {
+    color: #666;
+    margin-top: 5px;
+  }
+
+  .post-body {
+    font-family: 'Merriweather', serif;
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 50px;
+    width: 80%;
+  }
+}

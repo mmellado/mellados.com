@@ -26,7 +26,10 @@ var path = {
 
 gulp.task('bower-files', function() {
   return gulp.src([
-    'bower_components/jquery/dist/jquery.min.js'])
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/highlightjs/highlight.pack.js',
+    'bower_components/highlightjs/styles/darkula.css',
+    ])
    .pipe(gulp.dest('public/lib'))
 });
 
