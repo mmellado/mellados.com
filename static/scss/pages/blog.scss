@@ -47,20 +47,41 @@
 
   .post-body {
     font-family: 'Merriweather', serif;
-    line-height: 1.5;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: -.003em;
+    line-height: 1.58;
     margin: 0 auto;
     text-align: left;
     padding-top: 50px;
-    width: 80%;
+    width: 70%;
 
     p,
     ul {
-      margin-bottom: 15px;
+      margin-bottom: 30px;
 
       li {
         list-style: disc;
         margin-left: 20px;
       }
+    }
+
+    a {
+      &:before {
+        border-top: 1px solid $black;
+        bottom: 4px;
+        content: "";
+        display: block;
+        left: 5px;
+        position: absolute;
+        width: 100%;
+      }
+
+
+      &:hover:before {
+        display: none;
+      }
+
     }
   }
 
@@ -73,6 +94,6 @@
     box-sizing: border-box;
     margin: 25px auto 0;
     padding-top: 20px;
-    width: 80%;
+    width: 70%;
   }
 }
