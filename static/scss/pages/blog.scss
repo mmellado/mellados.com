@@ -52,6 +52,14 @@
     text-align: left;
     padding-top: 50px;
     width: 80%;
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .hljs {
+    padding: 2em;
   }
 
   #disqus_thread {
