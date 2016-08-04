@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Remarkable from 'remarkable';
+import ReactDisqusThread from 'react-disqus-thread';
 import config from '../../config';
 
 // Components
@@ -37,9 +38,11 @@ export default class BlogPost extends Component {
 
   render() {
     const data = this.props.data;
-    const post = data.page;
+    const post = data.activePost;
+    const shortname = 'mellados-com';
+    const slug = this.props.params.slug;
 
-    if (!post.fields) {
+    if (!post.fields && !post.title) {
       return(
         <NoMatch />
       );
@@ -64,6 +67,11 @@ export default class BlogPost extends Component {
           <p className="created">By <Link to={'/'}>Marcos Mellado</Link> on {created}</p>
           {updatedM}
           <div className="post-body" dangerouslySetInnerHTML={ {__html: md.render(post.fields.body) } }></div>
+          <ReactDisqusThread
+            shortname={shortname}
+            identifier={`blog-${slug}`}
+            title={ post.fields.title }
+            url={`http://www.mellados.com/blog/${slug}`}/>
         </div>
       </div>
     );

@@ -52,6 +52,7 @@ export default class App extends Component {
     }
 
     let transitionName = path.split('/')[2] ? 'back' : 'load';
+    var navStatus = data.isNavOpen ? 'open-nav' : '';
 
     // Server first
     const Routes = React.cloneElement(this.props.children, {
@@ -60,7 +61,7 @@ export default class App extends Component {
     });
 
     return (
-      <div id="js-body" className={data.titleColor}>
+      <div id="js-body" className={`${data.titleColor} ${navStatus}`}>
         <Nav data={ data }/>
         <ReactCSSTransitionGroup
           transitionName={transitionName}

@@ -81,7 +81,14 @@ export function getPageData(page_slug, post_slug) {
   if (post_slug) {
     const post = _.find(page, { slug: post_slug });
     if (post) {
-      page = post;
+      /**
+       * If hitting an individual post, we save it in its own store variable.
+       * This is to prevent the page from being repainted to blank when
+       * transitioning out
+       *
+       * TODO: Figure out why components repaint on transition out
+      */
+      AppStore.data.activePost = post;
       page.title = post.fields.title || post.fields.name;
     } else {
       page = {
@@ -109,6 +116,11 @@ export function getMoreItems() {
     AppStore.data.loading = false;
     AppStore.emitChange();
   }, 300);
+}
+
+export function updateNavStatus() {
+  AppStore.data.isNavOpen = !AppStore.data.isNavOpen;
+  AppStore.emitChange();
 }
 
 export function setTitleColor() {

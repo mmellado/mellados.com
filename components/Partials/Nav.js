@@ -19,7 +19,9 @@ export default class Nav extends Component {
   }
 
   _updateNavStatus() {
-    $('#js-body').toggleClass('open-nav');
+    AppDispatcher.dispatch({
+      action: 'update-nav-status'
+    });
   }
 
   render(){

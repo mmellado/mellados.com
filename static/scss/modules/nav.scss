@@ -26,12 +26,13 @@ nav {
   }
 
   ul {
-    display: none;
     left: 50%;
     position: absolute;
     opacity: 0;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 0;
+    z-index: -1;
 
     transition: opacity $animation-delay ease-out;
 
@@ -71,8 +72,9 @@ nav {
   width: 100vw;
 
   ul {
-    display: block;
     opacity: 1;
+    width: auto;
+    z-index: 1;
   }
 
   .logo {

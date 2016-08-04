@@ -41,7 +41,7 @@
   }
 
   .updated {
-    color: #666;
+    color: #999;
     margin-top: 5px;
   }
 
@@ -51,6 +51,14 @@
     margin: 0 auto;
     text-align: left;
     padding-top: 50px;
+    width: 80%;
+  }
+
+  #disqus_thread {
+    border-top: 1px solid #999;
+    box-sizing: border-box;
+    margin: 25px auto 0;
+    padding-top: 20px;
     width: 80%;
   }
 }

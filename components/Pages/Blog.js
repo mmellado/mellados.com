@@ -18,6 +18,17 @@ export default class Blog extends Component {
   componentDidMount() {
     const data = this.props.data;
     document.title = config.site.title + ' | ' + data.page.title;
+
+    // Updated
+    const page = data.page;
+    const page_slug = this._getSlug();
+    if (page.slug !== page_slug) {
+      this._getPageData(page_slug);
+    }
+  }
+
+  _getSlug() {
+    return this.props.location.pathname.replace(/\//g,'');
   }
 
   _getPageData() {

@@ -17,9 +17,8 @@ export default class Gallery extends Component {
 
     // Updated
     const page = data.page;
-    const page_slug = this._getSlug();
-    if (page.slug !== page_slug) {
-      this._getPageData(page_slug);
+    if (page.slug !== this._getSlug()) {
+      this._getPageData();
     }
   }
 

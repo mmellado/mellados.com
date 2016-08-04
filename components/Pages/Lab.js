@@ -32,7 +32,7 @@ export default class Lab extends Component {
 
   render() {
     const data = this.props.data;
-    const lab = data.page;
+    const lab = data.activePost;
 
     if (!lab.fields) {
       return(
