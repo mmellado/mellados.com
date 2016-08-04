@@ -52,6 +52,19 @@
     text-align: left;
     padding-top: 50px;
     width: 80%;
+
+    p,
+    ul {
+      margin-bottom: 15px;
+
+      li {
+        list-style: circle;
+      }
+    }
+  }
+
+  .hljs {
+    padding: 2em;
   }
 
   #disqus_thread {
