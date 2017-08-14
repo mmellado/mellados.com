@@ -17,3 +17,10 @@
 @import 'pages/gallery_item';
 @import 'pages/contact';
 @import 'pages/not_found';
+
+.bio {
+  max-width: 600px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
