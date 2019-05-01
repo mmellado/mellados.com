@@ -1,3 +1,4 @@
+// webpack config
 var webpack = require('webpack');
 
 if (process.env.NODE_ENV === 'development') {
