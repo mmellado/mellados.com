@@ -1,41 +1,88 @@
 {
   "name": "mellados.com",
+  "private": true,
+  "description": "Personal website for @mmellado",
   "version": "1.0.0",
-  "description": "Marcos Mellado's (@mmellado) personal website",
-  "main": "app.js",
-  "dependencies": {
-    "babel": "^5.8.29",
-    "babel-core": "^5.8.32",
-    "babel-loader": "^5.3.2",
-    "contentful": "^3.4.3",
-    "events": "^1.1.0",
-    "express": "^4.13.3",
-    "flux": "^2.1.1",
-    "history": "^1.13.0",
-    "hogan-express": "^0.5.2",
-    "lodash": "^4.14.0",
-    "react": "^15.0.0",
-    "react-addons-css-transition-group": "^15.0.0",
-    "react-disqus-thread": "^0.4.0",
-    "react-dom": "^15.0.0",
-    "react-router": "^2.0.0",
-    "remarkable": "^1.6.2",
-    "util": "^0.10.3",
-    "webpack": "^1.12.2"
-  },
   "author": "Marcos Mellado <marcos@mellados.com>",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmellado/mellados.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mmellado/mellados.com/issues"
+  },
+  "dependencies": {
+    "@types/react-helmet": "^5.0.15",
+    "@types/styled-components": "^4.4.2",
+    "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-canonical-urls": "^2.1.20",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-netlify": "^2.1.32",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-sitemap": "^2.2.27",
+    "gatsby-plugin-styled-components": "^3.1.19",
+    "gatsby-plugin-typescript": "^2.1.27",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.0.0"
+  },
   "devDependencies": {
-    "bower": "^1.7.9",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-shell": "^0.5.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.4",
-    "gulp-util": "^3.0.7",
-    "nodemon": "^1.10.0",
-    "webpack-stream": "^3.2.0"
+    "@babel/core": "^7.8.4",
+    "@storybook/addon-actions": "^5.3.10",
+    "@storybook/addon-knobs": "^5.3.10",
+    "@storybook/addon-links": "^5.3.10",
+    "@storybook/addons": "^5.3.10",
+    "@storybook/react": "^5.3.10",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby clean && gatsby develop --host 0.0.0.0",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "storybook": "start-storybook -s public,src/docs -p 9000",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
