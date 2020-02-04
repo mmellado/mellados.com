@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions;
 
-// You can delete this file if you're not using it
+  createRedirect({
+    fromPath: "http://mellado.me/*",
+    toPath: "https://marcos.mellado.me/:splat",
+    statusCode: 301,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "https://mellado.me/*",
+    toPath: "https://marcos.mellado.me/:splat",
+    statusCode: 301,
+    isPermanent: true,
+  });
+};
