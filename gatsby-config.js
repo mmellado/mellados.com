@@ -41,5 +41,6 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-remove-console`,
   ],
 };
