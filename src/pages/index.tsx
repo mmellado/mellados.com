@@ -19,8 +19,8 @@ const IndexPage = () => (
     </Paragraph>
 
     <Paragraph>
-      Marcos is currently a Principal Developer at AKQA, where he leads
-      development efforts for the Amsterdam studio. He previously worked as a UI
+      Marcos is currently a Technical Delivery Manager at AKQA, where he leads
+      the technology department for the Amsterdam studio. He previously worked as a UI
       Engineer at LinkedIn, where he contributed to several projects including
       the Homepage stream, Onboarding experience, Global header, the
       company&apos;s internal design system and Accessibility.
