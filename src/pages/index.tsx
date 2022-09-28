@@ -14,21 +14,21 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <Paragraph>
-      Software engineer specialized in frontend technologies, user experience,
-      accessibility and web animations.
+      Marcos is an Engineering Manager with a background in frontend, user 
+      experience, accessibility and web animation.
     </Paragraph>
 
     <Paragraph>
-      Marcos is currently a Technical Delivery Manager at AKQA, where he leads
-      the technology department for the Amsterdam studio. He previously worked as a UI
-      Engineer at LinkedIn, where he contributed to several projects including
-      the Homepage stream, Onboarding experience, Global header, the
-      company&apos;s internal design system and Accessibility.
+      He is a Sr. Technical Delivery Manager and Interim Director of Technology 
+      at AKQA Amsterdam. Previously workeing as a UI Engineer at LinkedIn, 
+      he contributed to several projects including the Homepage stream, Onboarding 
+      experience, Global header, the company&apos;s internal design system and 
+      Accessibility.
     </Paragraph>
 
     <Paragraph>
-      He also worked at Google as a lead engineer for the Google Fiber marketing
-      team. He has a Bachelor&apos;s degree in Computer Science from Tecnológico
+      He also worked at Google as a lead engineer for the Google Fiber marketing 
+      team. He has a Bachelor&apos;s degree in Computer Science from Tecnológico 
       de Monterrey.
     </Paragraph>
   </Layout>
