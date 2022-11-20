@@ -45,7 +45,7 @@
     "@storybook/addons": "5.3.18",
     "@storybook/react": "5.3.18",
     "@types/node": "13.11.1",
-    "@types/react-dom": "16.9.6",
+    "@types/react-dom": "16.9.17",
     "@types/react-helmet": "5.0.15",
     "@types/styled-components": "5.1.0",
     "@typescript-eslint/eslint-plugin": "2.29.0",
