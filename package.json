@@ -12,7 +12,7 @@
     "url": "https://github.com/mmellado/mellados.com/issues"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "1.10.7",
+    "babel-plugin-styled-components": "1.13.3",
     "dotenv": "8.2.0",
     "eslint-import-resolver-typescript": "2.0.0",
     "gatsby": "2.20.29",
