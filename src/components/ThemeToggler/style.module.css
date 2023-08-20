@@ -1,0 +1,19 @@
+.button {
+  border: 0;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 1rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  & svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

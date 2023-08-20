@@ -1,0 +1,8 @@
+.main {
+  padding: 2rem !important;
+
+  & .text {
+    margin-bottom: 1.5rem;
+    max-width: 40rem;
+  }
+}

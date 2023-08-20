@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  border-bottom: 1px solid var(--text-color);
+
+  & nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    & ul {
+      display: flex;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 2rem;
+    }
+  }
+
+  & h1 {
+    font-size: 1.3rem;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+}

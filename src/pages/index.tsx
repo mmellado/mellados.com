@@ -1,37 +1,39 @@
-import React from "react";
-import styled from "styled-components";
+import Head from "next/head";
+import { Inconsolata } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import Body from "@/components/Body";
 
-import Layout from "src/templates/Layout";
-import Seo from "src/components/atoms/Seo";
+// If loading a variable font, you don't need to specify the font weight
+const inconsolata = Inconsolata({ subsets: ["latin"] });
 
-const Paragraph = styled.p`
-  max-width: 500px;
-  font-size: 16px;
-  margin-bottom: 1.5rem;
-`;
-
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <Paragraph>
-      Software engineer specialized in frontend technologies, user experience,
-      accessibility and web animations.
-    </Paragraph>
-
-    <Paragraph>
-      Marcos is currently a Principal Developer at AKQA, where he leads
-      development efforts for the Amsterdam studio. He previously worked as a UI
-      Engineer at LinkedIn, where he contributed to several projects including
-      the Homepage stream, Onboarding experience, Global header, the
-      company&apos;s internal design system and Accessibility.
-    </Paragraph>
-
-    <Paragraph>
-      He also worked at Google as a lead engineer for the Google Fiber marketing
-      team. He has a Bachelor&apos;s degree in Computer Science from Tecnológico
-      de Monterrey.
-    </Paragraph>
-  </Layout>
-);
-
-export default IndexPage;
+export default function Home() {
+  return (
+    <div className={inconsolata.className}>
+      <Head>
+        <title>Home | Marcos Mellado</title>
+        <meta
+          name="description"
+          content="Software Engineering leader & Accessibility Advocate"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+        <meta property="og:title" content="Home" />
+        <meta
+          property="og:description"
+          content="Engineering leader &amp; Accessibility Advocate"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@mmellado" />
+        <meta name="twitter:title" content="Home | Marcos Mellado" />
+        <meta
+          name="twitter:description"
+          content="Engineering leader &amp; Accessibility Advocate"
+        />
+        <meta name="color-scheme" content="dark light" />
+      </Head>
+      <Navigation />
+      <Body />
+    </div>
+  );
+}
