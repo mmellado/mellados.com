@@ -8,29 +8,31 @@ const cx = classNames.bind(styles);
 
 const Navigation = () => {
   return (
-    <header className={cx("wrapper", "header")}>
-      <h1>
-        <Link href="/">Marcos Mellado</Link>
-      </h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://github.com/mmellado" target="_blank">
-              GithHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/mellado"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-        <ThemeToggler />
-      </nav>
+    <header className={cx("header")}>
+      <div className={cx("wrapper", "inner")}>
+        <h1>
+          <Link href="/">Marcos Mellado</Link>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="https://github.com/mmellado" target="_blank">
+                GithHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/in/mellado"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+          <ThemeToggler />
+        </nav>
+      </div>
     </header>
   );
 };

@@ -1,9 +1,12 @@
 .header {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 5rem;
-  border-bottom: 1px solid var(--text-color);
 
   & nav {
     display: flex;

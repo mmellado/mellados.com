@@ -1,5 +1,6 @@
 .main {
   padding: 2rem !important;
+  box-sizing: border-box;
 
   & .text {
     margin-bottom: 1.5rem;
