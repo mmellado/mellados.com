@@ -7,20 +7,24 @@ const Body = () => {
   return (
     <main id="main" className={cx("wrapper", "main")}>
       <p className={cx("text")}>
-        Marcos is an Engineering Manager with a background in frontend, user
-        experience, accessibility and web animation.
+        Marcos is a Software Engineering Leader with a background in frontend 
+        architecture, interactive web applications, design systems and accessibility.
       </p>
       <p className={cx("text")}>
-        He has handled management roles as Technical Delivery Manager and
-        Interim Tech Director at AKQA, dealing with both local and remote
-        development teams as well as technical client managent duties.
+        He currently works as Director of Engineering at Fanatics Live, 
+        where he oversees the development of their Instant Rips product.
+        In the past, he&apos;s worked as Engineering Manager for
+        Adyen&apos;s Design Systems team and as Technical Director for
+        Resn, overseeing all technical delivery and frontend architecture.
+        He also worked at AKQA as Technical Delivery manager, where he built 
+        the frontend team for their Amsterdam studio.
       </p>
       <p className={cx("text")}>
-        Before that he built development experience as a UI Engineer at
-        LinkedIn, where he contributed to several projects including the
-        Homepage stream, Onboarding experience, Global header, the
-        company&apos;s internal design system and Accessibility. He also worked
-        at Google as a Lead Engineer in the Google Fiber team.
+        Before being a manager, Marcos worked as a Frontend Engineer at
+        LinkedIn and Google, not only contributing to projects but also 
+        initiatives like their design systems and accessibility task forces. 
+        He then workedas the main maintainer for Airtame&apos;s design system, 
+        and as one of Booking.com&apos;s company wide accessibility drivers.
       </p>
       <p className={cx("text")}>
         He has a Bachelor&apos;s degree in Computer Science from Tecnológico de
